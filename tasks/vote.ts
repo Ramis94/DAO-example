@@ -1,6 +1,6 @@
 import {task} from "hardhat/config";
 
-task("deposit")
+task("vote")
     .addParam("contract", "The contract address")
     .addParam("votingid")
     .addParam("option")
@@ -9,13 +9,13 @@ task("deposit")
             "DAO",
             taskArgs.contract
         );
-        let option: number | Error;
+        let option: number;
         if (taskArgs.option == "positive") {
             option = 0;
         } else if (taskArgs.option == "negative") {
             option = 1;
         } else {
-            option = new Error("option must be 'positive' or 'negative'");
+            throw new Error("option must be 'positive' or 'negative'");
         }
         console.log(await contract.vote(taskArgs.votingid, option));
     });

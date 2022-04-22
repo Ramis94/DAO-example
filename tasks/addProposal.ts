@@ -1,14 +1,14 @@
-import { task } from "hardhat/config";
+import {task} from "hardhat/config";
 
-task("deposit")
-    .addParam("contract", "The contract address")
-    .addParam("callData")
-    .addParam("recipient")
+task("addProposal")
+    .addParam("contract")
     .addParam("description")
+    .addParam("recipient")
+    .addParam("calldata")
     .setAction(async (taskArgs, hre) => {
         const contract = await hre.ethers.getContractAt(
             "DAO",
             taskArgs.contract
         );
-        console.log(await contract.addProposal(taskArgs.callData, taskArgs.recipient, taskArgs.description));
+        console.log(await contract.addProposal(taskArgs.calldata, taskArgs.recipient, taskArgs.description));
     });

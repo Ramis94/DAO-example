@@ -1,0 +1,2 @@
+DAO deployed to: 0x57D1D3AC9545879cECCa62E802440D8B68877aB5
+verified: https://rinkeby.etherscan.io/address/0x57D1D3AC9545879cECCa62E802440D8B68877aB5#code

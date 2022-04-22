@@ -1,6 +1,6 @@
 import { task } from "hardhat/config";
 
-task("deposit")
+task("finish")
     .addParam("contract", "The contract address")
     .addParam("votingid")
     .setAction(async (taskArgs, hre) => {
