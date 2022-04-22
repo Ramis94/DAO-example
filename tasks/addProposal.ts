@@ -2,9 +2,9 @@ import {task} from "hardhat/config";
 
 task("addProposal")
     .addParam("contract")
-    .addParam("description")
-    .addParam("recipient")
     .addParam("calldata")
+    .addParam("recipient")
+    .addParam("description")
     .setAction(async (taskArgs, hre) => {
         const contract = await hre.ethers.getContractAt(
             "DAO",
